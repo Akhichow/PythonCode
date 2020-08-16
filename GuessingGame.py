@@ -6,7 +6,7 @@ input("Press ENTER to begin")
 
 guesses = 1
 while True:
-    guess = low + (high - low) // 2
+    guess = low + (high - low) // 2         #using Binary chop
     high_low = input("My guess is {}. Is your guess higher or lower?"
                      " Please press h for higher, l for lower and c for correct"
                      .format(guess)).casefold()
