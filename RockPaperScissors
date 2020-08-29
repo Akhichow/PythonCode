@@ -1,0 +1,55 @@
+import random
+
+rolls = {1: "rock", 2: "paper", 3: "scissors"}
+rock = 1
+paper = 2
+scissors = 3
+
+user_score = 0
+comp_score = 0
+
+while (comp_score < 5) or (user_score < 5):
+
+    computer = random.randint(1, 3)
+    user = int(input("What's your choice? "))
+
+    if (computer == 1 and user == 1) or (computer == 2 and user == 2) or (computer == 3 and user == 3):
+        print(f"Draw! Computer also chose {(rolls.get(computer))}")
+        print(f"Score: [You:{user_score} Computer:{comp_score}]")
+
+    elif computer == 1 and user == 2:
+        print(f"You win! Computer chose {rolls.get(computer)}")
+        user_score += 1
+        print(f"Score: [You:{user_score} Computer:{comp_score}]")
+
+    elif computer == 2 and user == 3:
+        print(f"You win! Computer chose {rolls.get(computer)}")
+        user_score += 1
+        print(f"Score: [You:{user_score} Computer:{comp_score}]")
+
+    elif computer == 3 and user == 1:
+        print(f"You win! Computer chose {rolls.get(computer)}")
+        user_score += 1
+        print(f"Score: [You:{user_score} Computer:{comp_score}]")
+
+    elif computer == 2 and user == 1:
+        print(f"You lose! Computer chose {rolls.get(computer)}")
+        comp_score += 1
+        print(f"Score: [You:{user_score} Computer:{comp_score}]")
+
+    elif computer == 3 and user == 2:
+        print(f"You lose! Computer chose {rolls.get(computer)}")
+        comp_score += 1
+        print(f"Score: [You:{user_score} Computer:{comp_score}]")
+
+    elif computer == 1 and user == 3:
+        print(f"You lose! Computer chose {rolls.get(computer)}")
+        comp_score += 1
+        print(f"Score: [You:{user_score} Computer:{comp_score}]")
+
+    else:
+        print("Invalid input")
+
+    if comp_score == 5 or user_score == 5:
+        print("Game over")
+        break
